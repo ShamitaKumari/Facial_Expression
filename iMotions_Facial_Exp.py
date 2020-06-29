@@ -308,14 +308,12 @@ plt.savefig('1st Approach with subtraction.png')
 # Additon of Positive and Negative Coulmns and then calculate the combined Mean and SD (results are similar)
 # ================================================================================================================
 #new1 = df1[df2]
-#addition = new1['Positive Time Percent']+new1['Negative Time Percent']
-#new1['addition']=addition
-#SumOfPosNeg_Mean = new1.groupby('Stimulus Name')['addition'].mean() 
-#SumOfPosNeg_std=new1.groupby('Stimulus Name')['addition'].std() 
-#iMo_Oasis1['SumOfPosNeg_Mean']=SumOfPosNeg_Mean
-#iMo_Oasis1['SumOfPosNeg_std']=SumOfPosNeg_std
-#print(SumOfPosNeg_Mean)
-#print(SumOfPosNeg_std)
+#new1 = new1.rename(columns={'Negative Time Percent': 'Negative_Time_Percent'})
+#new1.Negative_Time_Percent=new1.Negative_Time_Percent*(-1)
+#Combine_Col = new1['Positive Time Percent']+new1['Negative_Time_Percent']
+#new1['Combine_Col']=Combine_Col
+#SumOfPosNeg_Mean = new1.groupby('Stimulus Name')['Combine_Col'].mean() 
+#SumOfPosNeg_std=new1.groupby('Stimulus Name')['Combine_Col'].std() 
 
 #Adding mean values of positive and Negative Columns  AFTER MAPPING
 iMotions_Mean =Mean_DFrame1['iMotions_Positive_Mean']+Mean_DFrame1['iMotions_Negitive_Mean']
