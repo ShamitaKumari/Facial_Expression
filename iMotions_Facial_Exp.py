@@ -297,13 +297,6 @@ plt.savefig('1st Approach with subtraction.png')
 # =============================================================================
 #                                   2Nd Approach 
 #(Combined Mean of Positive and Negative columns as iMotions Mean and comparison with Oasis)
-# =============================================================================
-
-#2nd Approach
-#MEAN AFTER ADDITION OF SERIES
-#convert Negative Column into negative values for plotting on Y- Negative
-#Data_Merge.New_Negitive=Data_Merge.New_Negitive*(-1)
-#Adding mean values of positive and Negative Columns 
 # ===========================================================================================================
 # Additon of Positive and Negative Coulmns and then calculate the combined Mean and SD (results are similar)
 # ================================================================================================================
@@ -314,6 +307,10 @@ plt.savefig('1st Approach with subtraction.png')
 #new1['Combine_Col']=Combine_Col
 #SumOfPosNeg_Mean = new1.groupby('Stimulus Name')['Combine_Col'].mean() 
 #SumOfPosNeg_std=new1.groupby('Stimulus Name')['Combine_Col'].std() 
+##Create new DF MeanDFrame
+#p_N_data_dictA={'Mean':SumOfPosNeg_Mean,'std':SumOfPosNeg_std}
+#Mean_DFrame2=pd.DataFrame(p_N_data_dictA).reset_index()
+#iMo_Oasis3=pd.merge(new_oasis1,Mean_DFrame2,how='inner', on=['Stimulus Name'])
 
 #Adding mean values of positive and Negative Columns  AFTER MAPPING
 iMotions_Mean =Mean_DFrame1['iMotions_Positive_Mean']+Mean_DFrame1['iMotions_Negitive_Mean']
