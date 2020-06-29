@@ -304,12 +304,18 @@ plt.savefig('1st Approach with subtraction.png')
 #convert Negative Column into negative values for plotting on Y- Negative
 #Data_Merge.New_Negitive=Data_Merge.New_Negitive*(-1)
 #Adding mean values of positive and Negative Columns 
-#iMotions_mean =Mean_DFrame['iMotions_Positive_mean']+Mean_DFrame['iMotions_Negitive_mean']
-#Mean_DFrame['iMotions_mean']=iMotions_mean
-#iMotions_std =Mean_DFrame['iMotions_Positive_std']+Mean_DFrame['iMotions_Negitive_std']
-#Mean_DFrame['iMotions_std']=iMotions_std
-#iMo_Oasis['iMotions_mean']=iMotions_mean
-#iMo_Oasis['iMotions_std']=iMotions_std
+# ===========================================================================================================
+# Additon of Positive and Negative Coulmns and then calculate the combined Mean and SD (results are similar)
+# ================================================================================================================
+#new1 = df1[df2]
+#addition = new1['Positive Time Percent']+new1['Negative Time Percent']
+#new1['addition']=addition
+#SumOfPosNeg_Mean = new1.groupby('Stimulus Name')['addition'].mean() 
+#SumOfPosNeg_std=new1.groupby('Stimulus Name')['addition'].std() 
+#iMo_Oasis1['SumOfPosNeg_Mean']=SumOfPosNeg_Mean
+#iMo_Oasis1['SumOfPosNeg_std']=SumOfPosNeg_std
+#print(SumOfPosNeg_Mean)
+#print(SumOfPosNeg_std)
 
 #Adding mean values of positive and Negative Columns  AFTER MAPPING
 iMotions_Mean =Mean_DFrame1['iMotions_Positive_Mean']+Mean_DFrame1['iMotions_Negitive_Mean']
