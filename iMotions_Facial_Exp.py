@@ -79,7 +79,13 @@ sns.distplot(NewNegitive1['Negative Time Percent'],rug=True, kde=True, hist=Fals
 # =============================================================================
 # Mapping the scores of Positive and Negative Time Percent for level matching
 # =============================================================================
-
+#oasis_max=7
+#imotions_max=100
+##oasis_max=(iMo_Oasis['OASIS_Valence_mean'].max())
+##imotions_max=(new3['Positive Time Percent'].max())
+#for i in range(1, oasis_max):
+#    new3.loc[(new3['Positive Time Percent']>=((i-1)*imotions_max/oasis_max)) & (new3['Positive Time Percent']<(i*imotions_max/oasis_max)),'Positive Time Percent']=i
+#=============================================================================
 #mapping of positiv andNegative Time Percent
 NewNegitive1.loc[(NewNegitive1['Negative Time Percent']>=23.19) & (NewNegitive1['Negative Time Percent']<34.88),'Negative Time Percent']=-3
 NewNegitive1.loc[(NewNegitive1['Negative Time Percent']>=11.6) & (NewNegitive1['Negative Time Percent']<23.19),'Negative Time Percent']=-2
