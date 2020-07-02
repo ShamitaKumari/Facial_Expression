@@ -105,15 +105,14 @@ Data_Mapping=Data_Mapping[Data_Merge2]
 # =============================================================================
 #                         ####Another way of mapping the Column scores####
 # =============================================================================
-
-# ##divide the values by 28.57 to match the level of Scores (-3 to 3).
-# ##We are dividing it by 28.57 because we assume total of both (positive and Negative value ) columns is 200. (200/7=28.57)
-# #New_Positive= Data_Merge['Positive Time Percent']/28.57
-# #New_Negitive= Data_Merge['Negative Time Percent']/28.57
+# ##divide the values by 7 to match the level of Scores (-3 to 3).
+# ##We are dividing it by 7 because we assume total of both (positive and Negative value ) columns is 200. (200/7=28.57)
+#New_Positive= Data_Merge['Positive Time Percent']/7
+#New_Negitive= Data_Merge['Negative Time Percent']/7
 # ##divide the values by 14.285 to match the level of Scores (-3 to 3). 
 # ##We are dividing it by 14.285 because positive and negative scores lies between 0-100. (100/7=14.285)
-# #New_Positive= Data_Merge['Positive Time Percent']/14.285
-# #New_Negitive= Data_Merge['Negative Time Percent']/14.285
+# #New_Positive= Data_Merge['Positive Time Percent']/7
+# #New_Negitive= Data_Merge['Negative Time Percent']/7
 # #adding columns into Data_Merge Dataframe
 # #Data_Merge['New_Positive']=New_Positive
 # #Data_Merge['New_Negitive']=New_Negitive
