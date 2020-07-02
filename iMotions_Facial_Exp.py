@@ -295,23 +295,51 @@ plt.savefig('1st Approach with subtraction.png')
 
 # =============================================================================
 #                                   2Nd Approach 
-#(Combined Mean of Positive and Negative columns as iMotions Mean and comparison with Oasis)
+#(Combined Mean of Positive and Negative columns as iMotions Mean and comparison with Oasis) (1st Way)
 # ===========================================================================================================
-# Additon of Positive and Negative Coulmns and then calculate the combined Mean and SD (results are similar)
+# Additon of Positive and Negative Coulmns and then calculate the combined Mean and SD (results are similar in both ways)
 # ================================================================================================================
-#new1 = df1[df2]
-#new1 = new1.rename(columns={'Negative Time Percent': 'Negative_Time_Percent'})
-#new1.Negative_Time_Percent=new1.Negative_Time_Percent*(-1)
-#Combine_Col = new1['Positive Time Percent']+new1['Negative_Time_Percent']
-#new1['Combine_Col']=Combine_Col
-#SumOfPosNeg_Mean = new1.groupby('Stimulus Name')['Combine_Col'].mean() 
-#SumOfPosNeg_std=new1.groupby('Stimulus Name')['Combine_Col'].std() 
-##Create new DF MeanDFrame
-#p_N_data_dictA={'Mean':SumOfPosNeg_Mean,'std':SumOfPosNeg_std}
+#
+#Data_Merge4= pd.concat([NewPositive1,NewNegitive1], sort=False)
+#Data_Mergee=['Stimulus Name','Positive Time Percent','Negative_Time_Percent']
+#Data_Merge4=Data_Mergee[Data_Merge4]
+#
+#
+#Combine_Col = Data_Merge4['Positive Time Percent']+Data_Merge4['Negative Time Percent']
+#Data_Merge4['Combine_Col']=Combine_Col
+#SumOfPosNeg_Mean = Data_Merge4.groupby('Stimulus Name')['Combine_Col'].mean() 
+#SumOfPosNeg_std=Data_Merge4.groupby('Stimulus Name')['Combine_Col'].std() 
+##
+###
+####Create new DF MeanDFrame
+#p_N_data_dictA={'IMotions_Mean':SumOfPosNeg_Mean,'IMotions_std':SumOfPosNeg_std}
 #Mean_DFrame2=pd.DataFrame(p_N_data_dictA).reset_index()
 #iMo_Oasis3=pd.merge(new_oasis1,Mean_DFrame2,how='inner', on=['Stimulus Name'])
+####
+####
+##
+###Visualize comparios Error bar of iMotions and Oasis After Mapping
+#fig, ax = plt.subplots()
+#ax=iMo_Oasis3.plot.bar(x='Stimulus Name', 
+#                 y=['OASIS_Valence_mean','IMotions_Mean'],
+#                 yerr=iMo_Oasis3[['OASIS_Valence_SD','IMotions_std']].T.values,capsize=6,
+#                 align='center', ecolor='black',figsize=(8,7), 
+#                 title='iMotion Comparison error Bar of Positive nd Negative with Oasis'),
+#ax.grid(axis='y')
+#plt.tight_layout()
+#
+#
+###
+#fig, ax = plt.subplots()
+#graph=pd.DataFrame(iMo_Oasis3, columns=['Stimulus Name','OASIS_Valence_mean','IMotions_Mean'])
+#graphCompare=graph.groupby('Stimulus Name')
+#graphComparisonPlot= graphCompare.sum().plot(kind='bar',
+#                                     title='Comparison of iMotions Mean values with Oasis After Mapping  ',
+#                                     figsize=(8,6),align='center', capsize=10,ax=ax)
+#ax.grid(axis='y')
+#plt.savefig('2nd Approach with subtraction.png')
 
-#Adding mean values of positive and Negative Columns  AFTER MAPPING
+#Adding mean values of positive and Negative Columns  AFTER MAPPING (2nd Way)
 iMotions_Mean =Mean_DFrame1['iMotions_Positive_Mean']+Mean_DFrame1['iMotions_Negitive_Mean']
 Mean_DFrame1['iMotions_Mean']=iMotions_Mean
 iMotions_Std =Mean_DFrame1['iMotions_Positive_Std']+Mean_DFrame1['iMotions_Negitive_Std']
