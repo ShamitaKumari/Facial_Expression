@@ -374,6 +374,7 @@ plt.savefig('2nd Approach with subtraction.png')
 
 # =============================================================================
 #                                 ###COUNT FRAME###
+#               (This Section is not considered for this validation study)
 # =============================================================================#                                        
 #                                          
 ##drop all the 0 values from Positive and Negative time Percent columns
