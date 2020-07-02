@@ -387,13 +387,13 @@ plt.savefig('2nd Approach with subtraction.png')
 #
 ###divide the values by 28.57 to match the level of Scores (-3 to 3).
 ###We are dividing it by 28.57 because we assume total of both (positive and Negative value ) columns is 200. (200/7=28.57)
-#New_CF_Positive= CF_Data_Merge['Positive Count Frames']/28.57
-#New_CF_Negitive= CF_Data_Merge['Negative Count Frames']/28.57
+#New_CF_Positive= CF_Data_Merge['Positive Count Frames']/7
+#New_CF_Negitive= CF_Data_Merge['Negative Count Frames']/7
 #
 ###divide the values by 14.285 to match the level of Scores (-3 to 3). 
 ###We are dividing it by 14.285 because positive and negative scores lies between 0-100. (100/7=14.285)
-##New_Positive= Data_Merge['Positive Time Percent']/14.285
-##New_Negitive= Data_Merge['Negative Time Percent']/14.285
+##New_Positive= Data_Merge['Positive Time Percent']/7
+##New_Negitive= Data_Merge['Negative Time Percent']/7
 ##adding columns into Data_Merge Dataframe
 #CF_Data_Merge['New_CF_Positive']=New_CF_Positive
 #CF_Data_Merge['New_CF_Negitive']=New_CF_Negitive  
